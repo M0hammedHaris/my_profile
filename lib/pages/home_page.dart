@@ -1,35 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:my_profile/pages/Tablet/tablet.dart';
-import 'package:my_profile/pages/desktop/desktop.dart';
-import 'package:my_profile/pages/mobile/drawer.dart';
-import 'package:my_profile/pages/mobile/mobile.dart';
-import 'package:my_profile/widgets/navigation/navigation_bar.dart';
+import 'package:my_profile/content/profile_info.dart';
+import 'package:my_profile/widgets/buttons/nav_buttons.dart';
+import 'package:my_profile/widgets/navigation/nav_hrader.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
+
+  List<Widget> navButtons() => [
+        NavButton(
+          text: "About",
+          onPressed: () {},
+        ),
+        NavButton(
+          text: "Project",
+          onPressed: () {},
+        ),
+        NavButton(
+          text: "contact",
+          onPressed: () {},
+        ),
+      ];
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
-        drawer: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
-            ? MobileDrawer()
+        appBar: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
+            ? AppBar(
+                elevation: 0,
+                title: Text("Dev MH"),
+                backgroundColor: Colors.white,
+              )
             : null,
-        backgroundColor: Colors.white,
-        body: Column(
-          children: <Widget>[
-            Padding(
-              padding: sizingInformation.deviceScreenType != DeviceScreenType.Mobile ? EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0): EdgeInsets.symmetric(horizontal: 0.0,vertical: 0.0),
-              child: NavigationBar(),
-            ),
-            Expanded(
-                child: ScreenTypeLayout(
-              mobile: Mobile(),
-              desktop: Desktop(),
-              tablet: Tablet(),
-            )),
-          ],
-        ),
+        drawer: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
+            ? Drawer(
+                child: ListView(
+                  padding: const EdgeInsets.all(20),
+                  children: navButtons(),
+                ),
+              )
+            : null,
+        body: SingleChildScrollView(
+            child: AnimatedPadding(
+          padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.1),
+          duration: Duration(seconds: 1),
+          child: Column(
+            children: <Widget>[
+              if (sizingInformation.deviceScreenType == DeviceScreenType.Mobile)
+                NavHeader(navButtons: navButtons()),
+              if (sizingInformation.deviceScreenType == DeviceScreenType.Mobile)
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                ),
+              ProfileInfo(),
+            ],
+          ),
+        )),
       ),
     );
   }
