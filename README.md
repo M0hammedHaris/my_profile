@@ -1,6 +1,6 @@
 # my_profile
 
-A new Flutter project.
+Creating a potfolio using Flutter.
 
 ## Getting Started
 
