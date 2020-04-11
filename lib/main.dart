@@ -9,7 +9,7 @@ class MyProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Dev MH",
+      title: "Mohammed Haris Porfolio",
       home: HomePage(),
     );
   }
