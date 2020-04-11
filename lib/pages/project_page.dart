@@ -1,12 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_profile/content/profile_info.dart';
 import 'package:my_profile/widgets/navigation/nav_drawer.dart';
 import 'package:my_profile/widgets/navigation/nav_hrader.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key key}) : super(key: key);
+class ProjectPage extends StatelessWidget {
+  const ProjectPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,45 +13,18 @@ class HomePage extends StatelessWidget {
         appBar: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
             ? AppBar(
                 elevation: 0,
-                title: Row(
-                  children: <Widget>[
-                    Text(
-                      "Dev",
-                      textScaleFactor: 1.5,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black54),
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      "MH",
-                      textScaleFactor: 1.5,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    AnimatedContainer(
-                      duration: Duration(seconds: 1),
-                      height: 8,
-                      width: 8,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.orange,
-                      ),
-                    ),
-                  ],
+                title: Text(
+                  "Project",
+                  textScaleFactor: 1.25,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 backgroundColor: Colors.amber,
               )
             : null,
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
             ? Drawer(
-                child: NavDrawer(
-                  sizingInformation: sizingInformation,
-                ),
+                child: NavDrawer(sizingInformation: sizingInformation),
               )
             : null,
         body: SingleChildScrollView(
@@ -76,7 +47,7 @@ class HomePage extends StatelessWidget {
                       height: 0.0,
                       width: 0.0,
                     ),
-              ProfileInfo(),
+              Center(child: Text('Yet to update ...',textScaleFactor: 2.5,))
             ],
           ),
         )),

@@ -6,7 +6,6 @@ class ProfileInfo extends StatelessWidget {
         height: MediaQuery.of(context).size.width * 0.25,
         width: MediaQuery.of(context).size.width * 0.25,
         decoration: BoxDecoration(
-//            borderRadius: BorderRadius.circular(40),
           shape: BoxShape.circle,
           image: DecorationImage(
             image: AssetImage("assets/images/haris.jpg"),

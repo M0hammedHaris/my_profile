@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/data/icon_data.dart';
 
 class NavHeader extends StatelessWidget {
-  final List<Widget> navButtons;
+  final sizingInformation;
+  const NavHeader({Key key, this.sizingInformation}) : super(key: key);
 
-  const NavHeader({Key key, this.navButtons}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[NavBarTitle(), Row(children: navButtons)],
+      children: <Widget>[
+        NavBarTitle(),
+        Row(children: navButtons(context, sizingInformation))
+      ],
     );
   }
 }
@@ -16,7 +20,7 @@ class NavHeader extends StatelessWidget {
 class NavBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: <Widget>[
         Text(
           "Dev",
@@ -31,10 +35,7 @@ class NavBarTitle extends StatelessWidget {
         Text(
           "MH",
           textScaleFactor: 2,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.amber
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.amber),
         ),
         SizedBox(
           width: 5,
