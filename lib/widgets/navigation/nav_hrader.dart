@@ -17,7 +17,7 @@ class _NavHeaderState extends State<NavHeader> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         NavBarTitle(),
-        Row(children: navButtons(context, widget.sizingInformation))
+        Row(children: navButtonsDesktop(context))
       ],
     );
   }

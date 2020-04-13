@@ -1,11 +1,11 @@
 {
-    "name": "my_profile",
-    "short_name": "my_profile",
+    "name": "Mohammed haris",
+    "short_name": "Haris",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Mohammed haris portfolio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

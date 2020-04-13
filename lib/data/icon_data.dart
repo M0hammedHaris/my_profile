@@ -7,7 +7,7 @@ import 'package:my_profile/pages/project_page.dart';
 import 'package:my_profile/widgets/buttons/nav_buttons.dart';
 import 'package:toast/toast.dart';
 
-List<Widget> navButtons(context, sizingInformation) => [
+List<Widget> navButtonsDesktop(context) => [
       NavButton(
         text: "About",
         onPressed: () {
@@ -25,6 +25,32 @@ List<Widget> navButtons(context, sizingInformation) => [
       NavButton(
         text: "contact",
         onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ContactPage()));
+        },
+      ),
+    ];
+List<Widget> navButtonsMobile(context) => [
+      NavButton(
+        text: "About",
+        onPressed: () {
+          Navigator.of(context).pop();
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => HomePage()));
+        },
+      ),
+      NavButton(
+        text: "Project",
+        onPressed: () {
+          Navigator.of(context).pop();
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ProjectPage()));
+        },
+      ),
+      NavButton(
+        text: "contact",
+        onPressed: () {
+          Navigator.of(context).pop();
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => ContactPage()));
         },

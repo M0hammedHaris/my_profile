@@ -30,27 +30,18 @@ class ProjectPage extends StatelessWidget {
                 child: NavDrawer(sizingInformation: sizingInformation),
               )
             : null,
-        body: AnimatedPadding(
-          padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.045),
-          duration: Duration(seconds: 1),
-          child: Column(
-            children: <Widget>[
-              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
-                  ? NavHeader()
-                  : Container(
-                      height: 0.0,
-                      width: 0.0,
+        body: sizingInformation.deviceScreenType != DeviceScreenType.Mobile
+            ? AnimatedPadding(
+                padding:
+                    EdgeInsets.all(MediaQuery.of(context).size.height * 0.045),
+                duration: Duration(seconds: 2),
+                child: Column(
+                  children: <Widget>[
+                    NavHeader(),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.04,
                     ),
-              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
-                  ? SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                    )
-                  : Container(
-                      height: 0.0,
-                      width: 0.0,
-                    ),
-              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
-                  ? Expanded(
+                    Expanded(
                       child: new GridView.count(
                         padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 32.0),
                         crossAxisCount: 3,
@@ -62,15 +53,12 @@ class ProjectPage extends StatelessWidget {
                         ),
                       ),
                     )
-                  : Expanded(
-                      child: ListView.builder(
-                        itemCount: projects.length,
-                        itemBuilder: (context, index) => ProjectWidget(index: index),
-                      ),
-                    ),
-            ],
-          ),
-        ),
+                  ],
+                ))
+            : ListView.builder(
+                itemCount: projects.length,
+                itemBuilder: (context, index) => ProjectWidget(index: index),
+              ),
       ),
     );
   }

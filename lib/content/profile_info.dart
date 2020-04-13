@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_profile/data/primary_data.dart';
+import 'package:my_profile/pages/contact_page.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'dart:html' as html;
 
 class ProfileInfo extends StatelessWidget {
   profileImage(context) => Container(
@@ -16,7 +18,7 @@ class ProfileInfo extends StatelessWidget {
         ),
       );
 
-  profileData(sizingInformation) => Column(
+  profileData(sizingInformation, context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
@@ -62,7 +64,11 @@ class ProfileInfo extends StatelessWidget {
                 shape: StadiumBorder(),
                 child: Text("Resume"),
                 color: primaryColor,
-                onPressed: () {},
+                onPressed: () {
+                  html.window.open(
+                      "https://drive.google.com/file/d/1iAcq0et3Yd2ilU36BmkHlqEdEcUi0OJr/view?usp=sharing",
+                      "MH");
+                },
                 padding: EdgeInsets.all(10),
               ),
               SizedBox(
@@ -73,7 +79,10 @@ class ProfileInfo extends StatelessWidget {
                 shape: StadiumBorder(),
                 child: Text("Say Hi!"),
                 color: primaryColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ContactPage()));
+                },
                 padding: EdgeInsets.all(10),
               )
             ],
@@ -93,7 +102,7 @@ class ProfileInfo extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.width * 0.075,
             ),
-            profileData(sizingInformation)
+            profileData(sizingInformation, context)
           ],
         );
       } else {
@@ -105,7 +114,7 @@ class ProfileInfo extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.075,
             ),
-            profileData(sizingInformation)
+            profileData(sizingInformation, context)
           ],
         );
       }
