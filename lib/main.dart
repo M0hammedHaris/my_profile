@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/data/primary_data.dart';
 import 'package:my_profile/pages/home_page.dart';
 
 void main() {
@@ -10,6 +11,9 @@ class MyProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Mohammed Haris Porfolio",
+      theme: ThemeData(
+        primaryColor: primaryColor
+      ),
       home: HomePage(),
     );
   }

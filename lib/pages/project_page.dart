@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/content/project_info.dart';
+import 'package:my_profile/data/primary_data.dart';
+import 'package:my_profile/widgets/buttons/project_widget.dart';
 import 'package:my_profile/widgets/navigation/nav_drawer.dart';
 import 'package:my_profile/widgets/navigation/nav_hrader.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -19,7 +22,7 @@ class ProjectPage extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white),
                 ),
-                backgroundColor: Colors.amber,
+                backgroundColor: primaryColor,
               )
             : null,
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
@@ -27,8 +30,7 @@ class ProjectPage extends StatelessWidget {
                 child: NavDrawer(sizingInformation: sizingInformation),
               )
             : null,
-        body: SingleChildScrollView(
-            child: AnimatedPadding(
+        body: AnimatedPadding(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.045),
           duration: Duration(seconds: 1),
           child: Column(
@@ -47,10 +49,28 @@ class ProjectPage extends StatelessWidget {
                       height: 0.0,
                       width: 0.0,
                     ),
-              Center(child: Text('Yet to update ...',textScaleFactor: 2.5,))
+              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
+                  ? Expanded(
+                      child: new GridView.count(
+                        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 32.0),
+                        crossAxisCount: 3,
+                        childAspectRatio: MediaQuery.of(context).size.width /
+                            (MediaQuery.of(context).size.height / 1.3),
+                        children: List.generate(
+                          projects.length,
+                          (index) => ProjectWidget(index: index),
+                        ),
+                      ),
+                    )
+                  : Expanded(
+                      child: ListView.builder(
+                        itemCount: projects.length,
+                        itemBuilder: (context, index) => ProjectWidget(index: index),
+                      ),
+                    ),
             ],
           ),
-        )),
+        ),
       ),
     );
   }

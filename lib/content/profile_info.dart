@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/data/primary_data.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ProfileInfo extends StatelessWidget {
@@ -24,7 +25,7 @@ class ProfileInfo extends StatelessWidget {
                 sizingInformation.deviceScreenType != DeviceScreenType.Mobile
                     ? 2.0
                     : 1.75,
-            style: TextStyle(color: Colors.orange),
+            style: TextStyle(color: introColor),
           ),
           Text(
             "Mohammed\nHaris",
@@ -33,7 +34,7 @@ class ProfileInfo extends StatelessWidget {
                     ? 4.5
                     : 3.0,
             style: TextStyle(
-              color: Colors.amber,
+              color: primaryColor,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -41,15 +42,15 @@ class ProfileInfo extends StatelessWidget {
             height: 13,
           ),
           Text(
-            "I am a B.E. graduate specilized in Computer Science.\n"
-            "I have developed some PoC mobile application using Android and Flutter SDK.\n"
-            "Also worked on opensource platforms like Frappe, ERPNext.",
+            "I am a B.E. graduate specialized in Computer Science.\n"
+            "I have developed some PoC mobile applications using Android and Flutter SDK.\n"
+            "I also worked on opensource platforms like Frappe, ERPNext.",
             softWrap: true,
             textScaleFactor:
                 sizingInformation.deviceScreenType != DeviceScreenType.Mobile
                     ? 1.25
                     : 1.05,
-            style: TextStyle(color: Colors.black54),
+            style: TextStyle(color: titleColor),
           ),
           SizedBox(
             height: 20,
@@ -60,7 +61,7 @@ class ProfileInfo extends StatelessWidget {
               RaisedButton(
                 shape: StadiumBorder(),
                 child: Text("Resume"),
-                color: Colors.amber,
+                color: primaryColor,
                 onPressed: () {},
                 padding: EdgeInsets.all(10),
               ),
@@ -68,12 +69,10 @@ class ProfileInfo extends StatelessWidget {
                 width: 20,
               ),
               OutlineButton(
-                borderSide: BorderSide(
-                  color: Colors.amber,
-                ),
+                borderSide: BorderSide(color: primaryColor),
                 shape: StadiumBorder(),
                 child: Text("Say Hi!"),
-                color: Colors.amber,
+                color: primaryColor,
                 onPressed: () {},
                 padding: EdgeInsets.all(10),
               )

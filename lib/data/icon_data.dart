@@ -1,10 +1,11 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_profile/pages/contact_page.dart';
 import 'package:my_profile/pages/home_page.dart';
 import 'package:my_profile/pages/project_page.dart';
 import 'package:my_profile/widgets/buttons/nav_buttons.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:toast/toast.dart';
 
 List<Widget> navButtons(context, sizingInformation) => [
       NavButton(
@@ -17,9 +18,6 @@ List<Widget> navButtons(context, sizingInformation) => [
       NavButton(
         text: "Project",
         onPressed: () {
-          // if (sizingInformation.deviceScreenType == DeviceScreenType.Mobile) {
-          //   Navigator.of(context).pop();
-          // }
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => ProjectPage()));
         },
@@ -27,9 +25,6 @@ List<Widget> navButtons(context, sizingInformation) => [
       NavButton(
         text: "contact",
         onPressed: () {
-          // if (sizingInformation.deviceScreenType == DeviceScreenType.Mobile) {
-          //   Navigator.of(context).pop();
-          // }
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => ContactPage()));
         },
@@ -53,7 +48,7 @@ FlatButton linkedin = FlatButton.icon(
     label: Text('LinkedIn'),
     onPressed: () =>
         html.window.open("https://linkedin.com/in/mohammed-haris-k", "MH"));
-    
+
 FlatButton instagram = FlatButton.icon(
     icon: SizedBox(
       width: 20,
@@ -63,11 +58,18 @@ FlatButton instagram = FlatButton.icon(
     label: Text('Instagram'),
     onPressed: () =>
         html.window.open("https://www.instagram.com/mohammed_haris___/", "MH"));
-FlatButton email = FlatButton.icon(
+email(context) => FlatButton.icon(
     icon: SizedBox(
       width: 20,
       height: 20,
-      child: Image.asset("assets/images/mail.png",fit: BoxFit.fill,),
+      child: Image.asset(
+        "assets/images/mail.png",
+        fit: BoxFit.fill,
+      ),
     ),
     label: Text('mohammedharis.k.01@gmail.com'),
-    onPressed: () {});
+    onPressed: () {
+      Clipboard.setData(
+          new ClipboardData(text: "mohammedharis.k.01@gmail.com"));
+      Toast.show("Copied", context, gravity: Toast.CENTER);
+    });

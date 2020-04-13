@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:my_profile/data/primary_data.dart';
 
 class NavButton extends StatelessWidget {
   final text;
   final onPressed;
-  final Color color;
+  final color;
 
   const NavButton(
       {Key key,
       @required this.text,
       @required this.onPressed,
-      this.color = Colors.orange})
+      this.color = primaryColor})
       : super(key: key);
 
   @override
