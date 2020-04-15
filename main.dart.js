@@ -44556,8 +44556,7 @@ t($,"a7k","a_v",function(){var s,r=null,q=new Array(20)
 q.fixed$length=Array
 s=u.N
 return new N.DF(H.b(q,u.s),0,new N.Iz(H.b([],u.Q)),r,P.B(s,H.ah("ly<Bk>")),P.B(s,H.ah("Bk")),P.a3i(u.K,s),0,r,!1,!1,r,0,r,r,N.Y_(),N.Y_())})
-t($,"a88","To",function(){var s="assets/images/Icon-192.png"
-return H.b([K.xw("A Flutter based cross-platform application to find the SI for a given amount, rate of interest and period.",s,"SI Calculator"),K.xw("Java based android application for unit conversions.",s,"Converter App"),K.xw("A Flutter based cross-platform application to take notes and keep track of them.",s,"Note Keeper"),K.xw("A chatbot for Siddha treatment methods embeded with Dialog Flow.",s,"PR. Doctor"),K.xw("Frappe application to manage the manufacturing workflows in the garment industry.","assets/images/APPARELO.png","Apparelo")],H.ah("p<xv>"))})
+t($,"a88","To",function(){return H.b([K.xw("A Flutter based cross-platform application to find the SI for a given amount, rate of interest and period.","assets/images/calculator.png","SI Calculator"),K.xw("Java based android application for unit conversions.","assets/images/convertericon.png","Converter App"),K.xw("A Flutter based cross-platform application to take notes and keep track of them.","assets/images/notes.png","Note Keeper"),K.xw("A chatbot for Siddha treatment methods embeded with Dialog Flow.","assets/images/medicine.png","PR. Doctor"),K.xw("Frappe application to manage the manufacturing workflows in the garment industry.","assets/images/APPARELO.png","Apparelo")],H.ah("p<xv>"))})
 t($,"a83","a_Z",function(){var s=null
 return N.P8(T.Ur(U.o5("assets/images/GitHub.png",s,s,s),20,20),L.c3("Github",s,s,s),new X.Sz())})
 t($,"a86","a01",function(){var s=null
