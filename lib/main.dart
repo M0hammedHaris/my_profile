@@ -12,7 +12,7 @@ class MyProfile extends StatelessWidget {
     return MaterialApp(
       title: "Mohammed Haris Porfolio",
       theme: ThemeData(
-        primaryColor: primaryColor
+        primaryColor: primaryColor,
       ),
       home: HomePage(),
     );

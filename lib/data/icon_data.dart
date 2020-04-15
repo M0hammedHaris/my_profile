@@ -16,14 +16,14 @@ List<Widget> navButtonsDesktop(context) => [
         },
       ),
       NavButton(
-        text: "Project",
+        text: "Projects",
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => ProjectPage()));
         },
       ),
       NavButton(
-        text: "contact",
+        text: "Contact",
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => ContactPage()));
@@ -48,7 +48,7 @@ List<Widget> navButtonsMobile(context) => [
         },
       ),
       NavButton(
-        text: "contact",
+        text: "Contact",
         onPressed: () {
           Navigator.of(context).pop();
           Navigator.push(

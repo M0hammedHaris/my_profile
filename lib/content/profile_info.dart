@@ -27,7 +27,7 @@ class ProfileInfo extends StatelessWidget {
                 sizingInformation.deviceScreenType != DeviceScreenType.Mobile
                     ? 2.0
                     : 1.75,
-            style: TextStyle(color: introColor),
+            style: TextStyle(color: introColor, fontFamily: "Ubuntu"),
           ),
           Text(
             "Mohammed\nHaris",
@@ -52,7 +52,7 @@ class ProfileInfo extends StatelessWidget {
                 sizingInformation.deviceScreenType != DeviceScreenType.Mobile
                     ? 1.25
                     : 1.05,
-            style: TextStyle(color: titleColor),
+            style: TextStyle(color: titleColor, fontFamily: "Ubuntu"),
           ),
           SizedBox(
             height: 20,

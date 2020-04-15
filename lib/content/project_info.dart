@@ -12,6 +12,7 @@ class Project {
 }
 
 final flutter = "assets/images/Icon-192.png";
+final apparelo = "assets/images/APPARELO.png";
 final List<Project> projects = [
   Project(
     name: 'SI Calculator',
@@ -22,8 +23,7 @@ final List<Project> projects = [
   Project(
     name: 'Converter App',
     image: flutter,
-    description:
-        'Java based android application for unit conversions.',
+    description: 'Java based android application for unit conversions.',
   ),
   Project(
     name: 'Note Keeper',
@@ -36,5 +36,11 @@ final List<Project> projects = [
     image: flutter,
     description:
         'A chatbot for Siddha treatment methods embeded with Dialog Flow.',
+  ),
+  Project(
+    name: 'Apparelo',
+    image: apparelo,
+    description:
+        'Frappe application to manage the manufacturing workflows in the garment industry.',
   ),
 ];
