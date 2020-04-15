@@ -13,27 +13,31 @@ class Project {
 
 final flutter = "assets/images/Icon-192.png";
 final apparelo = "assets/images/APPARELO.png";
+final notekeeper = "assets/images/notes.png";
+final si = "assets/images/calculator.png";
+final converter = "assets/images/convertericon.png";
+final prDr = "assets/images/medicine.png";
 final List<Project> projects = [
   Project(
     name: 'SI Calculator',
-    image: flutter,
+    image: si,
     description:
         'A Flutter based cross-platform application to find the SI for a given amount, rate of interest and period.',
   ),
   Project(
     name: 'Converter App',
-    image: flutter,
+    image: converter,
     description: 'Java based android application for unit conversions.',
   ),
   Project(
     name: 'Note Keeper',
-    image: flutter,
+    image: notekeeper,
     description:
         'A Flutter based cross-platform application to take notes and keep track of them.',
   ),
   Project(
     name: 'PR. Doctor',
-    image: flutter,
+    image: prDr,
     description:
         'A chatbot for Siddha treatment methods embeded with Dialog Flow.',
   ),
