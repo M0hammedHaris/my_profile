@@ -13,6 +13,7 @@ class MyProfile extends StatelessWidget {
       title: "Mohammed Haris Porfolio",
       theme: ThemeData(
         primaryColor: primaryColor,
+        primarySwatch: primaryColor,
       ),
       home: HomePage(),
     );

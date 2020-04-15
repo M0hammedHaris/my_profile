@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_profile/content/profile_info.dart';
+import 'package:my_profile/data/icon_data.dart';
 import 'package:my_profile/data/primary_data.dart';
 import 'package:my_profile/widgets/navigation/nav_drawer.dart';
 import 'package:my_profile/widgets/navigation/nav_hrader.dart';
@@ -16,6 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
         appBar: sizingInformation.deviceScreenType == DeviceScreenType.Mobile
@@ -64,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             : null,
         body: SingleChildScrollView(
             child: AnimatedPadding(
-          padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.045),
+          padding: EdgeInsets.all(height * 0.045),
           duration: Duration(seconds: 1),
           child: Column(
             children: <Widget>[
@@ -76,13 +78,21 @@ class _HomePageState extends State<HomePage> {
                     ),
               sizingInformation.deviceScreenType != DeviceScreenType.Mobile
                   ? SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
+                      height: height * 0.1,
                     )
                   : Container(
                       height: 0.0,
                       width: 0.0,
                     ),
               ProfileInfo(),
+              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
+                  ? SizedBox(
+                      height: height * 0.2,
+                    )
+                  : SizedBox(),
+              sizingInformation.deviceScreenType != DeviceScreenType.Mobile
+                  ? copyRight()
+                  : SizedBox(),
             ],
           ),
         )),

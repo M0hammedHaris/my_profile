@@ -43,7 +43,7 @@ class ProjectPage extends StatelessWidget {
                     ),
                     Expanded(
                       child: new GridView.count(
-                        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 32.0),
+                        padding: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
                         crossAxisCount: 3,
                         childAspectRatio: MediaQuery.of(context).size.width /
                             (MediaQuery.of(context).size.height / 1.3),

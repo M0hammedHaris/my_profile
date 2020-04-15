@@ -10,9 +10,6 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-        padding: const EdgeInsets.all(20),
-        children: sizingInformation.deviceScreenType != DeviceScreenType.Mobile
-            ? navButtonsDesktop(context)
-            : navButtonsMobile(context));
+        padding: const EdgeInsets.all(20), children: navButtonsMobile(context));
   }
 }

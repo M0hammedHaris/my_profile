@@ -1,6 +1,7 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_profile/data/primary_data.dart';
 import 'package:my_profile/pages/contact_page.dart';
 import 'package:my_profile/pages/home_page.dart';
 import 'package:my_profile/pages/project_page.dart';
@@ -40,7 +41,7 @@ List<Widget> navButtonsMobile(context) => [
         },
       ),
       NavButton(
-        text: "Project",
+        text: "Projects",
         onPressed: () {
           Navigator.of(context).pop();
           Navigator.push(
@@ -55,7 +56,22 @@ List<Widget> navButtonsMobile(context) => [
               context, MaterialPageRoute(builder: (context) => ContactPage()));
         },
       ),
+      SizedBox(
+        height: MediaQuery.of(context).size.height * 0.66,
+      ),
+      copyRight(),
     ];
+
+Widget copyRight() => Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: <Widget>[
+        Text(
+          "Mohammed Haris ©️2020",
+          style: TextStyle(color: copyRightColor),
+        )
+      ],
+    );
 FlatButton github = FlatButton.icon(
     icon: SizedBox(
       width: 20,
